@@ -1,12 +1,37 @@
-<h1>You are on basics page</h1>
+<div style="padding: 20px; background-color: #FF8469">
+    <h1 style="color: white">You are on basics page</h1>
+</div>
+
 <ul>
-    <li><a href="#">Qué es un resource en el contexto de una aplicación web REST en Ruby on Rails?</a></li>
-    <li><a href="#">Qué puede hacerse con un resource?</a>
-    <li><a href="#">Qué es RESTful routing?</a>
-        <ul>
-            <li><a href="#">Cuantas acciones básicas tiene esta filosofía?</a></li>
-            <li><a href="#">Cuales son?</a></li>
-            <li><a href="#">Cuales verbos HTTP se utilizan en cada una de ellas?</a></li>
-        </ul>
-    </li>
+    <li><a href="#Q1">Qué es un resource en el contexto de una aplicación web REST en Ruby on Rails?</a></li>
+    <li><a href="#Q2">Qué puede hacerse con un resource?</a>
+    <li><a href="#Q3">Qué es RESTful routing, culaes son sus acciones y sus verbos?</a></li>
 </ul>
+
+<h3 id='Q1'> <b>El <i>resource </i></b></h3>
+<article>Un <i>resource</i> es una abstracción de un elemento existente en nuestro entorno rails, cuya interacción se hace a través de un verbo de manipulación el cual nos permite manejar sus dependencias como objetos que se pueden crear, leer, actualizar y eliminar por medio del protocolo HTTP.</article>
+<h3 id='Q2'> <b>Que se puede hacer con un <i>resource </i></b></h3>
+<article>El <i>resource</i> o recurso, puede ser creado, leído, actualizado y eliminado. Por ejemplo, un recurso puede ser la representación de un modelo User cuya información puede ser accedida por medio de un verbo de manipulación.</article>
+<h3 id='Q3'> <b>RESTfull routing</b></h3>
+<article> Es un protocolo de manipulación de información que funciona a través de todas las rutas de acceso o <i>paths</i> que puede tener un elemento de acuerdo a las acciones que este tenga. <br><br>
+En Rails un recurso estándar tiene las siguientes acciones:
+<ul>
+    <li>Index: enumerar todos los elementos de un recurso</li>
+    <li>Show: muestra un elemento de un recurso</li>
+    <li>New: página para crear un nuevo elemento</li>
+    <li>Create: crea un nuevo elemento</li>
+    <li>Edit: página para editar un elemento</li>
+    <li>Destroy: elimina un elemento</li>
+    <li>Update: modifica un elemento</li>
+</ul>
+Estas se acciones se clasifican en 4 verbos de manipulación :
+<ul>
+    <li>POST: crear (create)</li>
+    <li>GET: leer y consultar (show, new, index, edit)</li>
+    <li>PUT: editar (update)</li>
+    <li>DELETE: eliminar (destroy)</li>
+</ul>
+</article>
+
+<br style="padding:150px">
+<div><%= link_to "Regresar", root_path %></div><br>

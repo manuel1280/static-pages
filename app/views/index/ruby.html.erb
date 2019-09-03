@@ -1,11 +1,134 @@
-<h1>You are on ruby page</h1>
+<div style="padding: 20px; background-color: #FF8469">
+    <h1 style="color: white">You are on ruby page</h1>
+</div>
+
 <ul>
-    <li><a href="#">Interpolación de strings</a></li>
-    <li><a href="#">Cómo se declara un array y cómo se adiciona un elemento al final del array</a>
-    <li><a href="#">Cómo se itera un array utilizando el comando each</a></li>
-    <li><a href="#">Cómo se declara un hash</a></li>
-    <li><a href="#">Cómo se itera un hash utilizando el comando each</a></li>
-    <li><a href="#">Que es un block en ruby? De un ejemplo de cómo utilizarlo</a></li>
-    <li><a href="#">Cual es la convención en Ruby a la hora de nombrar variables?</a></li>
-    <li><a href="#">Qué son attr_reader, attr_writer y attr_accesor? Para qué sirven?</a></li>
+    <li><a href="#Q1">Interpolación de strings</a></li>
+    <li><a href="#Q2">Cómo se declara un array y cómo se adiciona un elemento al final del array</a>
+    <li><a href="#Q3">Cómo se itera un array utilizando el comando each</a></li>
+    <li><a href="#Q4">Cómo se declara un hash</a></li>
+    <li><a href="#Q5">Cómo se itera un hash utilizando el comando each</a></li>
+    <li><a href="#Q6">Que es un block en ruby? De un ejemplo de cómo utilizarlo</a></li>
+    <li><a href="#Q7">Cual es la convención en Ruby a la hora de nombrar variables?</a></li>
+    <li><a href="#Q8">Qué son attr_reader, attr_writer y attr_accesor? Para qué sirven?</a></li>
 </ul>
+
+<h3 id='Q1'> Interpolación de <i>strings</i></h3>
+<article>
+    Se realiza con la notación "#{}". Dentro las llaves debemos introducir el valor del elemento a concatenar o interpolar. <br> ejemplo: <br><br>
+    >> first_name  =  "Michael"     # Asignación de variables <br>
+    => "Michael" <br>
+    >> " # { first_name } Hartl"      # Interpolación de cadenas <br>
+    => "Michael Hartl"<br>
+</article>
+
+<h3 id='Q2'> Declaración de <i>arrays</i></h3>
+Se puede realizar de tres maneras:
+<article>
+    <b>1.</b> Invocando el metodo cosntructor "Array.New". ejemplo: <br>
+    >> Array.new(4) { Hash.new } #declaración de arreglo de 4 hashes <br>
+    => [{}, {}, {}, {}] <br>
+    <b>2.</b> Con el simbolo de asignación "=". ejemplo: <br>
+    >> a = [42, 8, 17] <br>
+    => [42, 8, 17] <br>
+    <b>3.</b> Utilizando el metodo de conversión de tipo ".to_a". ejemplo: <br>
+    >> (0..9).to_a <br>
+    => [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]<br>
+</article>
+
+<h3> Adición de elemento al final del <i>array</i></h3>
+<article>
+    <b>1.</b> mediante la asignación negativa "-1". ejemplo: <br>
+    >> a = [42, 8, 17] <br>
+    => [42, 8, 17] <br>
+    >> a[-1] = 5 <br>
+    => [42, 8, 17,5] <br>
+    <b>2.</b> mediante el método "push". ejemplo: <br>
+
+    >> a.push(6)<br>
+    => [42, 8, 17, 6]<br>
+    <b>3.</b> mediante la notación "<<". ejemplo: <br>
+    >> a << 7 <br>
+    => [42, 8, 17, 6, 7]<br>
+    >> a << "foo" << "bar"<br>
+    => [42, 8, 17, 6, 7, "foo", "bar"]<br>
+</article>
+
+<h3 id='Q3'> Iteración de <i>arrays</i> con "each"</h3>
+el método "each" funciona con un variable local encerrada en los "pipes" , que toma el valor de cada elemento recorrido.<br>
+<article>
+    >> %w[A B C].each { |char| char.downcase }<br>
+    => ["a", "b", "c"]<br>
+</article>
+
+<h3 id='Q4'> Declaración de <i>Hashes</i></h3>
+Los Hashes son grupos de parejas que funcinan como una combinaciónde "llave-valor" lo que nos permite asignarle un nombre particular a cada elemento del Hash. ejemplo: <br>
+<article>
+    >> user = {}                          # {} decalración de hash vacio<br>
+    => {}<br>
+    >> user["first_name"] = "Michael"     # asignación de llave - valor<br>
+    => "Michael"<br>
+    >> user["last_name"] = "Hartl"        <br>
+    => "Hartl"<br>
+    >> user["first_name"]                 # accesso a un elemento.<br>
+    => "Michael"<br>
+    >> user                               # representación de todo el hash<br>
+    => {"last_name"=>"Hartl", "first_name"=>"Michael"<br>
+</article>
+
+<h3 id='Q5'> Iteración de <i>Hashes</i> con "each"</h3>
+Se itera de la misma manera que en los <i>arrays</i> solo que con dos variables de iteración. ejemplo:<br>
+<article>
+    >> flash = { success: "It worked!", danger: "It failed." }<br>
+    => {:success=>"It worked!", :danger=>"It failed."}<br>
+    >> flash.each do |key, value|<br>
+    >>   puts "Key #{key.inspect} has value #{value.inspect}"<br>
+    >> end<br>
+    => Key :success has value "It worked!"<br>
+    => Key :danger has value "It failed."<br>
+</article>
+
+<h3 id='Q6'> Los bloques</h3>
+los bloques son pequeñas pseudofunciones que tiene una estructura básica:<br>
+El código debe estar encerrado en un "do/end" o entre llaves "{ }", en los cuales se utilizan múltiples argumentos que son definidos dentro de pipes "| |".<br>
+ejemplo:<br>
+<article>
+>> [1, 2, 3].each do |num|
+>> print num
+>> end
+=> 123
+</article>
+
+<h3 id='Q7'> Convenciones para declarar variables</h3>
+Ruby consta de 4 tipos de variables, las cuales funciona en diferentes instancias de acceso.<br>
+<h4> Variables globales </h4>
+Las variables globales comienzan con "$". Las variables globales no inicializadas tienen el valor nulo y producen advertencias con la opción "-w".
+<h4> Variables de instancia </h4>
+Las variables de instancia comienzan con "@". Las variables de instancia no inicializadas tienen el valor nil.
+<h4> Variables de clase </h4>
+Las variables de clase comienzan con "@@" y deben inicializarse antes de que puedan usarse en las definiciones de métodos.
+<h4> Variables locales </h4>
+Las variables locales comienzan con una letra minúscula o "_". El alcance de una variable local varía desde clase, módulo, def o do hasta el final correspondiente o desde la llave de apertura de un bloque hasta su llave de cierre {}.
+
+<h3 id='Q8'> Accesso a atributos de un objeto</h3>
+Un objeto Ruby tiene sus métodos públicos por defecto, pero sus datos son privados. Entonces, si necesita acceder a los datos, ya sea para leer o escribir, debe hacerlos públicos de alguna manera. Para ello se utilizan los siguiente métodos de acceso<br>
+<article>
+    <b> attr_reader</b><br>
+    Permite solamente leer los atributos de un objeto. Este funcionamiento es conocido como <i>getter</i><br>
+    <b> attr_writer</b><br>
+    Permite únicamente definir leer los atributos de un objeto. Este funcionamiento es conocido como <i>setter</i><br>
+    <b> attr_accesor</b><br>
+    Básicamente attr_accessor es un atajo para cuando necesitas ambos attr_readery attr_writer. Combina los dos funcionameinto e una sola linea en la cual podemos definir todas los atributos a los cuales queremos acceder. ejemplo: <br><br>
+
+>> class Person<br>
+>> attr_accessor :name, :age, :sex, :email<br>
+>> def initialize(name)<br>
+>> @name = name<br>
+>> end<br>
+>> end<br>
+
+</article>
+
+
+<br style="padding:150px">
+<div><%= link_to "Regresar", root_path %></div><br>

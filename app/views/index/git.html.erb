@@ -1,12 +1,70 @@
-<h1>You are on git page</h1>
+<div style="padding: 20px; background-color: #FF8469">
+    <h1 style="color: white">You are on git page</h1>
+</div>
 <ul>
-    <li><a href="#">Inicialización de un repositorio de git nuevo en una aplicación existente</a></li>
-    <li><a href="#">Creación de un branch nuevo</a>
-    <li><a href="#">Realizar un commit incluyendo todos los cambios actuales</a></li>
-    <li><a href="#">Cómo enviar el código al repositorio remoto</a></li>
-    <li><a href="#">Cómo configurar el origen del repositorio remoto para evitar escribirlo siempre cada vez que se hace un push o un pull.</a></li>
-    <li><a href="#">Diferencia entre un reset y revert</a></li>
-    <li><a href="#">Además de cambiar de ramas, para qué más se puede utilizar el comando git checkout</a></li>
-    <li><a href="#">Como puede ver los commits que se han realizado en el proyecto</a></li>
-    <li><a href="#">He modificado dos archivos y quiero hacer un commit por cada uno de ellos, cómo lo puedo hacer?</a></li>
+    <li><a href="#Q1">Inicialización de un repositorio de git nuevo en una aplicación existente</a></li>
+    <li><a href="#Q2">Creación de un branch nuevo</a>
+    <li><a href="#Q3">Realizar un commit incluyendo todos los cambios actuales</a></li>
+    <li><a href="#Q4">Cómo enviar el código al repositorio remoto</a></li>
+    <li><a href="#Q5">Cómo configurar el origen del repositorio remoto para evitar escribirlo siempre cada vez que se hace un push o un pull.</a></li>
+    <li><a href="#Q6">Diferencia entre un reset y revert</a></li>
+    <li><a href="#Q7">Además de cambiar de ramas, para qué más se puede utilizar el comando git checkout</a></li>
+    <li><a href="#Q8">Como puede ver los commits que se han realizado en el proyecto</a></li>
+    <li><a href="#Q9">He modificado dos archivos y quiero hacer un commit por cada uno de ellos, cómo lo puedo hacer?</a></li>
 </ul>
+
+<h3 id='Q1'> Inicialización repositorio Git</b></h3>
+<article>
+    Para inicializar un repositorio que ya existe en nuestro entorno de desarrollo y queremos guardarlo en Git, debes realizar los siguiente:<br>
+    git init<br>
+    git commit -m "first commit"<br>
+    git remote add origin https://github.com/nombre_de_repositorio.git<br>
+    git push -u origin master<br>
+</article>
+
+<h3 id='Q2'> Crear una nueva rama</b></h3>
+<article>
+    Se realiza con el siguiente comando:<br><br>
+    git checkout –b nombre_de_la_rama<br>
+</article>
+
+<h3 id='Q3'> Commit con cambios actuales</b></h3>
+<article>
+    Se realiza con el siguiente comando:<br><br>
+    git commit  -am “mensaje de commit”<br>
+    en cuyo caso, la abndera "-a" sirve para incluir todos los cambios a realizar de una vez en el <i>staging area</i> y realizar el commit en un solo paso
+</article>
+
+<h3 id='Q4'> Enviar código al repositorio remoto</b></h3>
+<article>
+    Se realiza con el siguiente comando:<br><br>
+    git push nombre_de_la_rama<br>
+</article>
+
+<h3 id='Q6'> git revert vs git reset</b></h3>
+<article>
+La direfencia consiste en que "git revert" deshace un solo commit, mas no "vuelve" al estado anterior de un proyecto, eliminando todas las confirmaciones posteriores. En Git, esto se llama reinicio ("git reset"), no reversión ("revert"), en cuyo caso sí elimina los commit posteriores al que se desee volver.<br>
+</article>
+
+<h3 id='Q7'> git checkout</b></h3>
+<article>
+Además de utilizarse para crear nuevas ramas, git checkout nos permite deshacer cambios realizados sobre nuestros documentos respecto al último commit realizado. <br>
+</article>
+
+<h3 id='Q8'> Consultar los commits realizados</b></h3>
+<article>
+Cuando queremos consultar el histórico de nuestros commits realizados sobre una rama, ejecutamos el comando "git log" esto nos imprimira una lista de los commit realizados con sus respectivos mensajes y fechas. <br>
+Git log ofrece una mejor manera de visualizar la consulta mediante la bandera "--oneline" esto nos dará un listado más resumido.
+</article>
+
+<h3 id='Q9'> Commits por cada archivo modificado</b></h3>
+<article>
+Para realizar un commit por cada archivo modificado se debe realizar una adición individual al "staging area" mediante el comando "git add" y continuar el cargue agit. ejemplo: <br>
+git add archivo1.rb<br>
+git commit -m "adición archivo1"<br>
+git add archivo2.rb<br>
+git commit -m "adición archivo2"<br>
+</article>
+
+<br style="padding:150px">
+<div><%= link_to "Regresar", root_path %></div><br>
