@@ -16,29 +16,36 @@
 <h3 id='Q1'> Inicialización repositorio Git</b></h3>
 <article>
     Para inicializar un repositorio que ya existe en nuestro entorno de desarrollo y queremos guardarlo en Git, debes realizar los siguiente:<br>
-    git init<br>
-    git commit -m "first commit"<br>
-    git remote add origin https://github.com/nombre_de_repositorio.git<br>
-    git push -u origin master<br>
+    $ git init<br>
+    $ git commit -m "first commit"<br>
+    $ git remote add origin https://github.com/nombre_de_repositorio.git<br>
+    $ git push -u origin master<br>
 </article>
 
 <h3 id='Q2'> Crear una nueva rama</b></h3>
 <article>
     Se realiza con el siguiente comando:<br><br>
-    git checkout –b nombre_de_la_rama<br>
+    $ git checkout –b nombre_de_la_rama<br>
 </article>
 
 <h3 id='Q3'> Commit con cambios actuales</b></h3>
 <article>
     Se realiza con el siguiente comando:<br><br>
-    git commit  -am “mensaje de commit”<br>
+    $ git commit  -am “mensaje de commit”<br>
     en cuyo caso, la abndera "-a" sirve para incluir todos los cambios a realizar de una vez en el <i>staging area</i> y realizar el commit en un solo paso
 </article>
 
 <h3 id='Q4'> Enviar código al repositorio remoto</b></h3>
 <article>
     Se realiza con el siguiente comando:<br><br>
-    git push nombre_de_la_rama<br>
+    $ git push nombre_de_la_rama<br>
+</article>
+
+<h3 id='Q5'> Configuración de repositorio remoto</b></h3>
+<article>
+    Se debe iniciar la aplicación estableciendo las credenciales globales.<br>
+    $ git config --global user.name "John Doe"
+    $ git config --global user.email johndoe@example.com
 </article>
 
 <h3 id='Q6'> git revert vs git reset</b></h3>
@@ -60,10 +67,10 @@ Git log ofrece una mejor manera de visualizar la consulta mediante la bandera "-
 <h3 id='Q9'> Commits por cada archivo modificado</b></h3>
 <article>
 Para realizar un commit por cada archivo modificado se debe realizar una adición individual al "staging area" mediante el comando "git add" y continuar el cargue a git. ejemplo: <br>
-git add archivo1.rb<br>
-git commit -m "adición archivo1"<br>
-git add archivo2.rb<br>
-git commit -m "adición archivo2"<br>
+$ git add archivo1.rb<br>
+$ git commit -m "adición archivo1"<br>
+$ git add archivo2.rb<br>
+$ git commit -m "adición archivo2"<br>
 </article>
 
 <br style="padding:150px">
